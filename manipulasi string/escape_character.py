@@ -1,0 +1,6 @@
+
+
+
+
+
+print('Dia berkata: "Pergilah!"')
