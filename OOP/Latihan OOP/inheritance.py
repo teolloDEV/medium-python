@@ -14,5 +14,5 @@ class pekerja:
     pass
 
 
-alex = orang('alex', 'jepara')
+alex = orang('alex', 'ggggg')
 alex.perkenalan()
