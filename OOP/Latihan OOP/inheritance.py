@@ -1,18 +1,50 @@
-class orang:
+# Membuat object induk
+
+class Orang:
     def __init__(self, nama, asal):
         self.nama = nama
         self.asal = asal
 
     def perkenalan(self):
-        print(f'Perkenalkan nama saya {self.nama} dari {self.asal}')
+        print(f'Hello perkenalkan nama saya {self.nama}, dan saya berasal dari {self.asal}')
 
 
-class pelajar:
+# Object turunan (Child)
+
+class Pelajar(Orang):
     pass
+    def __init__(self, nama, asal):
+        self.nama = nama
+        self.asal = asal
 
-class pekerja:
+
+class Pekerja(Orang):
     pass
+    def __init__(self, nama, asal):
+        self.nama = nama
+        self.asal = asal
 
 
-alex = orang('alex', 'ggggg')
+# Memanggil object Induk
+
+arif = Orang('arif', 'jepara')
+arif.perkenalan()
+
+# Memanggil Object turunan (Child)
+
+roy = Pelajar('roy','bandung')
+roy.perkenalan()
+alex = Pekerja('alex', 'Jakarta')
 alex.perkenalan()
+
+
+
+
+
+
+#Membuat Konstruktor pada kelas turunan
+class Orang:
+    def __init__(self, nama, asal):
+        self.nama = nama
+        self.asal = asal
+    print('fungsi orang __init__ telah diekskusi')
