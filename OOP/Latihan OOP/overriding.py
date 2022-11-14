@@ -5,7 +5,8 @@ class Kendaraan :
         print('mobil sedang berjalan...')
 
 class Mobil(Kendaraan):
-    pass
+    def berjalan(self):
+        print('Berjalan dengan cepat..')
 
 kendaraan1 = Kendaraan()
 mobil1 = Mobil()
