@@ -92,5 +92,12 @@ sql = "INSERT INTO customers (name, address) VALUES ('"+ name +"', '" + address 
 
 Terakhir kita harus lakukan **db.commit()** untuk menyimpan data. Method ini biasanya dipanggil saat insert data, update data, dan hapus data.
 
-### Menambahkan beberapa Data sekaligus
+### Menampilkan Data
+> Kita dapat menampilkan data dari MySQL dengan query SELECT. Kemudian kita ambil datanya dengan method:
+
+> - ***fetchall()*** untuk ambil semua data;
+> - ***fetachmany(10)*** untuk ambil 10 data;
+> - ***fetchone()*** untuk mengambil satu data pertama saja.
+
+
 
