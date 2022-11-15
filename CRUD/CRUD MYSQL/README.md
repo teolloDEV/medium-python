@@ -100,4 +100,6 @@ Terakhir kita harus lakukan **db.commit()** untuk menyimpan data. Method ini bia
 > - ***fetchone()*** untuk mengambil satu data pertama saja.
 
 
+### UPDATE Data
 
+> - Caranya sama seperti insert data. Bedanya, kalau update kita harus menggunakan query UPDATE.
