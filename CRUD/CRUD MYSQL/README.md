@@ -31,3 +31,66 @@ if db.is_connected():
 lalu panggil dengan
 
     python3 connect.py
+
+### Membuat Database
+
+> - Selain objek db, kita membutuhkan satu lagi objek yaitu cursor untuk mengeksekusi perintah SQL atau query. Objek ini berada di dalam objek db.
+
+Sehingga untuk membuat objek cursor kita tinggal buat seperti ini
+
+    cursor = db.cursor()
+
+> - Lalu untuk mengeksekusi query, tinggal panggil method execute() dengan parameter string query.
+
+    cursor.execute(sql)
+### Membuat Tabel
+> - Cara membuat tabel sama seperti cara membuat database. Kita tinggal masukan perintah SQL atau query ke dalam method execute().
+
+```commandline
+db = mysql.connector.connect(
+  host="localhost",
+  user="admin",
+  passwd="admin",
+  database="toko_mainan"
+)
+```
+
+### Insert Data
+
+```commandline
+import mysql.connector
+
+db = mysql.connector.connect(
+  host="localhost",
+  user="admin",
+  passwd="admin",
+  database="toko_mainan"
+)
+
+cursor = db.cursor()
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ("Dian", "Mataram")
+cursor.execute(sql, val)
+
+db.commit()
+
+print("{} data ditambahkan".format(cursor.rowcount))
+```
+
+> - Pada kode tersebut kita menggunakan %s sebagai placeholder untuk value atau data yang akan kita tambahkan.
+
+
+Mengapa tidak menggunakan seperti ini saja:
+
+```commandline
+name = "Dian"
+address = "Mataram"
+sql = "INSERT INTO customers (name, address) VALUES ('"+ name +"', '" + address +"')"
+```
+
+> - Ini kurang aman, karena bisa terkena SQL injection dan juga kurang rapi.
+
+Terakhir kita harus lakukan **db.commit()** untuk menyimpan data. Method ini biasanya dipanggil saat insert data, update data, dan hapus data.
+
+### Menambahkan beberapa Data sekaligus
+
