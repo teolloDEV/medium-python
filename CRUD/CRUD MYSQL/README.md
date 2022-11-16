@@ -112,4 +112,15 @@ val = ("Ardianta", "Lombok", 1)
 cursor.execute(sql, val)
 ```
 
+### Hapus Data
+
+> - Hapus data sama seperti update data. 
+> - Kita harus menggunakan query DELETE untuk menghapus dan WHERE untuk menentukan data yang akan dihapus.
+
+```commandline
+cursor = db.cursor()
+sql = "DELETE FROM customers WHERE customer_id=%s"
+val = (1, )
+cursor.execute(sql, val)
+```
 
