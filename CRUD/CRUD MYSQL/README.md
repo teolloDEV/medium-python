@@ -102,4 +102,14 @@ Terakhir kita harus lakukan **db.commit()** untuk menyimpan data. Method ini bia
 
 ### UPDATE Data
 
-> - Caranya sama seperti insert data. Bedanya, kalau update kita harus menggunakan query UPDATE.
+> - Caranya sama seperti insert data. 
+> - Bedanya, kalau update kita harus menggunakan query UPDATE.
+
+```commandline
+cursor = db.cursor()
+sql = "UPDATE customers SET name=%s, address=%s WHERE customer_id=%s"
+val = ("Ardianta", "Lombok", 1)
+cursor.execute(sql, val)
+```
+
+
